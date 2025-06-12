@@ -1,16 +1,3 @@
-# def inteiro_para_binario(valor, bits=32):
-#     return format(valor & ((1 << bits) - 1), f'0{bits}b')
-
-# def inteiro_para_hex(valor):
-#     return hex(valor & 0xFFFFFFFF)
-
-# def parse_offset_base(arg):
-#     if '(' in arg:
-#         offset_str, base_str = arg.replace(')', '').split('(')
-#         return int(offset_str), base_str.strip()
-#     else:
-#         raise ValueError(f"Formato inválido para offset(base): {arg}")
-
 def inteiro_para_binario(valor, bits=32):
     # Converte um inteiro para uma string binária de 'bits' de comprimento.
     # Usa complemento de 2 para valores negativos.

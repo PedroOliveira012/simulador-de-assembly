@@ -1,20 +1,3 @@
-# class Memoria:
-#     def __init__(self):
-#         self.mem = {}
-
-#     def ler(self, endereco):
-#         return self.mem.get(endereco & 0xFFFFFFFC, 0)
-
-#     def escrever(self, endereco, valor):
-#         self.mem[endereco & 0xFFFFFFFC] = valor & 0xFFFFFFFF
-
-#     def mostrar(self):
-#         print("\n--- Memória ---")
-#         if not self.mem:
-#             print("(vazia)")
-#         for addr in sorted(self.mem.keys()):
-#             print(f"[0x{addr:08x}]: 0x{self.mem[addr]:08x}")
-
 class Memoria:
     def __init__(self):
         self.mem = {}
