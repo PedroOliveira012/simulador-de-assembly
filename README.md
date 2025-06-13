@@ -1,4 +1,4 @@
-simulado# Simulador MIPS
+# Simulador MIPS
 
 Este é um simulador básico de arquitetura MIPS, desenvolvido em Python. Ele é capaz de carregar e executar programas escritos em um subconjunto da linguagem Assembly MIPS, simulando o comportamento de uma CPU, registradores e memória.
 
