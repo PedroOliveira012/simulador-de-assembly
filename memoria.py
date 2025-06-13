@@ -1,29 +1,20 @@
-# memoria.py
-
 class Memoria:
     def __init__(self):
-        # Representa a memória como um dicionário: endereço -> valor
-        self.mem = {}  # Exemplo: {1000: 42, 1004: 7}
+        self.mem = {}
 
     def ler(self, endereco):
-        """
-        Lê o valor da memória no endereço especificado.
-        Se o endereço não estiver na memória, retorna 0.
-        """
-        return self.mem.get(endereco, 0)
+        # Garante alinhamento de 4 bytes e retorna 0 se o endereço não estiver mapeado
+        return self.mem.get(endereco & 0xFFFFFFFC, 0)
 
     def escrever(self, endereco, valor):
-        """
-        Escreve um valor em um endereço da memória.
-        """
-        self.mem[endereco] = valor
+        # Garante alinhamento de 4 bytes e armazena o valor como 32 bits unsigned
+        self.mem[endereco & 0xFFFFFFFC] = valor & 0xFFFFFFFF
 
     def mostrar(self):
-        """
-        Mostra todo o conteúdo atual da memória em ordem de endereço.
-        """
-        print("\n--- Estado da Memória ---")
+        print("\n--- Memória ---")
         if not self.mem:
-            print("(memória vazia)")
-        for endereco in sorted(self.mem.keys()):
-            print(f"Endereço {endereco}: {self.mem[endereco]}")
+            print("(vazia)")
+        else:
+            # Ordena os endereços para exibição consistente
+            for addr in sorted(self.mem.keys()):
+                print(f"[0x{addr:08x}]: 0x{self.mem[addr]:08x}")
